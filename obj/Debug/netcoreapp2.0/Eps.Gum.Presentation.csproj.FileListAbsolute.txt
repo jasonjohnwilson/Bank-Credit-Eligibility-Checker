@@ -1,6 +1,0 @@
-C:\dev\gum\eps.gum.presentation\Eps.Gum.Presentation\bin\Debug\netcoreapp2.0\Eps.Gum.Presentation.deps.json
-C:\dev\gum\eps.gum.presentation\Eps.Gum.Presentation\bin\Debug\netcoreapp2.0\Eps.Gum.Presentation.dll
-C:\dev\gum\eps.gum.presentation\Eps.Gum.Presentation\obj\Debug\netcoreapp2.0\Eps.Gum.Presentation.csprojResolveAssemblyReference.cache
-C:\dev\gum\eps.gum.presentation\Eps.Gum.Presentation\obj\Debug\netcoreapp2.0\Eps.Gum.Presentation.csproj.CoreCompileInputs.cache
-C:\dev\gum\eps.gum.presentation\Eps.Gum.Presentation\obj\Debug\netcoreapp2.0\Eps.Gum.Presentation.AssemblyInfoInputs.cache
-C:\dev\gum\eps.gum.presentation\Eps.Gum.Presentation\obj\Debug\netcoreapp2.0\Eps.Gum.Presentation.AssemblyInfo.cs
