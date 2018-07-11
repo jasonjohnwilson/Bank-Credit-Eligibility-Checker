@@ -1,7 +1,4 @@
-# BcaEligibilityChecker
-
-Example application 
-## The second largest heading
+## BcaEligibilityChecker
 
 The BCA eligibility checker code is located at the following path within the application:  **src/app/eligibility**
 
