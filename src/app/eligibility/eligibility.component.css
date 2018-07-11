@@ -1,0 +1,58 @@
+#form{
+    padding: 20px;
+}
+
+.image-upload > input
+{
+    display: none;
+}
+.attach-doc
+{
+    cursor: pointer;
+}
+
+h3, h3 a, p, label {
+    color: #808285;
+}
+
+h3{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.button-file{
+    border-radius: 0;
+    margin: 0;
+    color: white;
+}
+
+p 
+{
+    margin-bottom: 30px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+label{
+    width:110px;
+}
+
+input[type=file] {
+    
+    width: 100px;
+    visibility: hidden;
+    margin: 0;      
+    text-align: center;
+    padding:0 px;
+}
+
+[hidden] {
+    display: none !important;
+  }
+
+.form-group  {
+    margin-bottom: 25px;
+}

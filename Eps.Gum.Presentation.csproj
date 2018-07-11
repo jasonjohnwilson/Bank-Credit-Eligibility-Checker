@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>Eps.Gum.Presentation</AssemblyName>
+    <RootNamespace>Eps.Gum.Presentation</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="angular-build" Version="1.0.37" />
+    <PackageReference Include="azure-webapp-deploy" Version="1.0.23" />
+    <PackageReference Include="OctopusTools" Version="4.31.1" />
+  </ItemGroup>
+
+</Project>

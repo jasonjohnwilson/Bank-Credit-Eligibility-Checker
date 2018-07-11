@@ -1,0 +1,17 @@
+{
+    "environment":{
+        "name": "#{environment}"
+    },
+    "auth":{
+        "enabled": false,
+        "authority": "#{authAuthority}",
+        "client_id": "#{authClientId}",
+        "redirect_uri": "#{authRedirectUri}",
+        "post_logout_redirect_uri": "#{authPostLogoutRedirectUri}",
+        "silent_redirect_uri": "#{authSilentRedirectUri}",
+        "scopes": "#{authScopes}"
+    },
+    "api":{
+        "hostUrl": "#{apiHostUri}"
+    }
+}

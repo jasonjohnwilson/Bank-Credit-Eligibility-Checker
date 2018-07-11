@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\core",
+    "\\src\\app\\core\\config",
+    "\\src\\app\\core\\security",
+    "\\src\\app\\core\\services",
+    "\\src\\app\\security",
+    "\\src\\assets",
+    "\\src\\assets\\config",
+    "\\src\\environments"
+  ],
+  "SelectedNode": "\\src\\assets\\config\\config.localdev.json",
+  "PreviewInSolutionExplorer": false
+}

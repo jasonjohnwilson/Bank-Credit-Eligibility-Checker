@@ -1,0 +1,16 @@
+<!-- <div class="bca-form col-md-12"> -->
+  <h3>BCA Eligibility Checker</h3>
+
+  <p>Upload your file to determine if you are eligible for a Business Cash Advance.</p>
+  <form name="uploadForm" (ngSubmit)="checkEligibility()" #theForm="ngForm" novalidate>
+    <div class="form-group input-group">
+      <input #selectedFile class="form-control" type="text" [(ngModel)]="filename" name="selectedFile" id="selectedFile" readonly
+      />
+      <label class="btn btn-primary button-file">
+        Select File
+        <input #fileinput type="file" name="selectFile" id="selectFile" type="file" (change)="fileSelect($event)" />
+      </label>
+    </div>
+    <input id="submit" name="submit" type="submit" class="btn btn-primary" value="Check Eligibility">
+  </form>
+<!-- </div> -->
