@@ -1,6 +1,6 @@
 {
-    "environment":{
-        "name": "#{environment}"
+    "environment":{"
+        "name": ""
     },
     "auth":{
         "enabled": false,
@@ -13,5 +13,5 @@
     },
     "api":{
         "hostUrl": "#{apiHostUri}"
-    }
+    }"
 }

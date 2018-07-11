@@ -27,8 +27,8 @@ const toastr: any = window['toastr'];
     ToastrService,
     { provide: JQ_TOKEN, useValue: jQuery },
     { provide: TOASTR_TOKEN, useValue: toastr },
-    AppConfig,
-    { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true }
+    AppConfig
+    // ,{ provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true }
   ]
 })
 export class CoreModule { }
