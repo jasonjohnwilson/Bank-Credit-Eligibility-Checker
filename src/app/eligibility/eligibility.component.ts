@@ -24,6 +24,11 @@ export class EligibilityComponent {
     }
   }
 
+  resetFile() {
+    this.businessInput = null;
+    this.filename = '';
+  }
+
   fileSelect(event) {
     const reader = new FileReader();
     try {
@@ -35,15 +40,13 @@ export class EligibilityComponent {
             this.filename = file.name;
             console.log(file.name);
             this.businessInput = <IBusinessInput>JSON.parse(reader.result.toString());
-          }
-          catch (e) {
+          } catch (e) {
             this.toastrService.error('The file submitted is not in the correct format');
             this.filename = '';
           }
         };
       }
-    }
-    catch (e) {
+    } catch (e) {
       this.toastrService.error('The file submitted is not in the correct format');
       this.filename = '';
     }
