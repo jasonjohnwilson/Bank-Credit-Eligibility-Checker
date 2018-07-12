@@ -8,13 +8,12 @@ export class AmountAboveValueMustHaveTransactionsForLast12Months implements IEli
     constructor(private amountsAbove: number) {}
 
     isValid(businessInput: IBusinessInput): boolean {
-
         if (businessInput.amountRequested > this.amountsAbove) {
             const monthlyTransactions = getMonthlyTotals(businessInput);
             if (monthlyTransactions.monthIndexes.length < 12) {
                 return false;
             } else {
-                const last12Indexes = monthlyTransactions.monthIndexes.splice(0, 12);
+                const last12Indexes = monthlyTransactions.monthIndexes.reverse().splice(0, 12);
 
                 const hasZeroTransactionMonths = last12Indexes.some(index => {
                     return monthlyTransactions.monthDictionary[index].totalAmount === 0
