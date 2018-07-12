@@ -7,3 +7,10 @@ The main class for encapsulating the validation is the **BusinessCashAdvanceServ
 The code has also been wrapped with an angular application to demonstrate how it works further.
 
 This has also been deployed to azure at the following URL: https://bca-eligibility-demo.azurewebsites.net
+
+### Unit Tests
+
+I've made a start on unit tests as I was going through but as I was short of time I've just given a couple of basic examples.  Normally I'd do these following TDD and I'd have tests in palce to cover all the specifications.
+
+
+

@@ -3,9 +3,7 @@ import { IBusinessInput } from '../business-input.type';
 import { ITransaction } from '../transaction.type';
 import { getMonthlyTotals } from '../eligibility.functions';
 
-// Comment: rule seems to contradict rule -
-// If there are no transactions in a month for the last 12 months, then the assumed
-// transaction value for that month is the average of all other months that do have transactions.
+// The transaction average in each month must exceed the requested amount
 export class TransactionAverageInEachMonthMustExceedRequestedAmount implements IEligibilityRule {
 
     isValid(businessInput: IBusinessInput): boolean {

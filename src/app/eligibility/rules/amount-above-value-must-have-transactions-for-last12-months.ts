@@ -2,6 +2,8 @@ import { getMonthlyTotals } from '../eligibility.functions';
 import { IEligibilityRule } from '../eligibility-rule.type';
 import { IBusinessInput } from '../business-input.type';
 
+// If the amount requested is above 25,000, then the transaction history must 
+// cover more than 12 months, with no months having no transactions. The empty months can't be populated with the average as above.
 export class AmountAboveValueMustHaveTransactionsForLast12Months implements IEligibilityRule {
     constructor(private amountsAbove: number) {}
 
