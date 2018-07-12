@@ -10,7 +10,7 @@ This has also been deployed to azure at the following URL: https://bca-eligibili
 
 ### Unit Tests
 
-I've made a start on unit tests as I was going through but as I was short of time I've just given a couple of basic examples.  Normally I'd do these following TDD and I'd have tests in palce to cover all the specifications.
+I've made a start on unit tests as I was going through but as I was short on time I have just given a couple of basic examples.  Normally I would unit test as I was developing following TDD and also have tests to cover all the specifications.
 
 
 
