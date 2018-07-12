@@ -19,6 +19,7 @@ export class BusinessCashAdvanceService {
   constructor() { }
 
   checkEligibility(businessInput: IBusinessInput): boolean {
+    debugger;
     const anyIneligible = this.eligibilityRules.some(rule => {
       return rule.isValid(businessInput) === false;
     });

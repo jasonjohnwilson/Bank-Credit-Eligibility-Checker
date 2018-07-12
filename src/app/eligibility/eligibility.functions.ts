@@ -9,8 +9,8 @@ export function getMonthlyTotals(businessInput: IBusinessInput): IMonthsAndIdexe
     businessInput.transactions
         .forEach((transaction: ITransaction) => {
             const date = new Date(transaction.date);
-            const index = -1;
-            parseInt(date.getFullYear() + '' + date.getMonth(), index);
+            let index = -1;
+            index = parseInt(date.getFullYear() + '' + (date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth()));
 
             if (monthlyTotal[index] != null) {
                 monthlyTotal[index].numberOfTransactions += 1;
@@ -30,6 +30,9 @@ export function getMonthlyTotals(businessInput: IBusinessInput): IMonthsAndIdexe
         monthIndexes: sortAscending(indexes)
     };
 
+    defaultMissingLast12Months(months);
+    months.monthIndexes = sortAscending(months.monthIndexes);
+
     if (anyMonthInLast12MonthsWithZeroTransaction(months)) {
         const monthlyAverage = getMonthlyAverage(months);
         defaultZeroMonthsToAverage(months, monthlyAverage);
@@ -38,8 +41,41 @@ export function getMonthlyTotals(businessInput: IBusinessInput): IMonthsAndIdexe
     return months;
 }
 
+export function defaultMissingLast12Months(months: IMonthsAndIdexes) {
+    let indexes: number[] = [];
+    let currentMonth = 0;
+    let currentYear = 0;
+    const numberOfMonths = 12;
+    let date = new Date();
+    currentMonth = date.getMonth();
+    currentYear = date.getFullYear();
+
+    for (let i = 0; i < numberOfMonths; i++) {
+        let index = 0;
+        index = parseInt(currentYear + '' + (currentMonth < 10 ? '0' + currentMonth : currentMonth));
+        indexes.push(index);
+
+        currentMonth -= 1;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear -= 1;
+        }
+    }
+
+     indexes.forEach(index => {
+        if (months.monthIndexes.indexOf(index) === -1) {
+            months.monthIndexes.push(index);
+            months.monthDictionary[index] = {
+                numberOfTransactions: 0,
+                totalAmount: 0,
+                assumedValue: false
+            };
+        }
+     });
+}
+
 export function defaultZeroMonthsToAverage(months: IMonthsAndIdexes, average: number) {
-    const indexes = months.monthIndexes.splice(0, 12);
+    const indexes = months.monthIndexes.reverse().slice(0, 12);
     indexes.forEach(index => {
         if (months.monthDictionary[index].totalAmount === 0) {
             months.monthDictionary[index].totalAmount = average;
@@ -51,7 +87,7 @@ export function defaultZeroMonthsToAverage(months: IMonthsAndIdexes, average: nu
 export function anyMonthInLast12MonthsWithZeroTransaction(months: IMonthsAndIdexes): boolean {
     let any = false;
 
-    months.monthIndexes.reverse().splice(0, 12).forEach(index => {
+    months.monthIndexes.reverse().slice(0, 12).forEach(index => {
         if (months.monthDictionary[index].totalAmount === 0) {
             any = true;
         }

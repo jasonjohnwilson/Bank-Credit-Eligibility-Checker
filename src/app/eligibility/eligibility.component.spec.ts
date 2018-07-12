@@ -1,14 +1,28 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { EligibilityComponent } from './eligibility.component';
+import { ToastrService } from '../core/services/toastr.service';
+import { BusinessCashAdvanceService } from './business-cash-advance.service';
+import { JQ_TOKEN } from '../core/services/jquery.service';
+import { TOASTR_TOKEN } from '../core/services/toastr.token';
 
-describe('DemoComponent', () => {
+const jQuery: any = window['$'];
+const toastr: any = window['toastr'];
+
+describe('EligibilityComponent', () => {
   let component: EligibilityComponent;
   let fixture: ComponentFixture<EligibilityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EligibilityComponent ]
+      imports: [FormsModule],
+      declarations: [ EligibilityComponent ],
+      providers: [
+        ToastrService,
+    { provide: JQ_TOKEN, useValue: jQuery },
+    { provide: TOASTR_TOKEN, useValue: toastr },
+        BusinessCashAdvanceService
+      ]
     })
     .compileComponents();
   }));
